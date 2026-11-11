@@ -3,180 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dołącz do naszej społeczności Discord. Poznaj ekipę, wydarzenia i zasady serwera.">
-  <meta name="theme-color" content="#090b16">
-  <title>NEXORA | Twoja społeczność</title>
+  <meta name="theme-color" content="#090914">
+  <title>VantixDLC | Minecraft Client</title>
   <style>
-    :root {
-      --bg: #090b16;
-      --panel: #111629;
-      --panel2: #151c33;
-      --text: #f4f6ff;
-      --muted: #a8b0ca;
-      --cyan: #53e6ff;
-      --purple: #9b7bff;
-      --line: rgba(255,255,255,.10);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; color: var(--text);
-      background:
-        radial-gradient(ellipse at 15% 5%, rgba(83,230,255,.13), transparent 34rem),
-        radial-gradient(ellipse at 90% 20%, rgba(155,123,255,.16), transparent 32rem),
-        var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1100px, calc(100% - 40px)); margin: auto; }
-    header { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(16px); background: rgba(9,11,22,.78); border-bottom: 1px solid var(--line); }
-    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { font-weight: 900; letter-spacing: .16em; font-size: 1.15rem; }
-    .brand span { color: var(--cyan); }
-    .links { display: flex; align-items: center; gap: 25px; color: var(--muted); font-size: .92rem; }
-    .links a:hover { color: var(--text); }
-    .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 12px; color: #071018; font-weight: 800; background: linear-gradient(100deg, var(--cyan), #9bf4ff); box-shadow: 0 8px 30px rgba(83,230,255,.18); transition: transform .2s, box-shadow .2s; }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(83,230,255,.28); }
-    .button.secondary { color: var(--text); background: rgba(255,255,255,.06); border: 1px solid var(--line); box-shadow: none; }
-    .hero { min-height: 590px; display: grid; align-items: center; padding: 85px 0 95px; }
-    .eyebrow { display: inline-flex; gap: 9px; align-items: center; padding: 7px 12px; border: 1px solid rgba(83,230,255,.25); border-radius: 99px; color: var(--cyan); background: rgba(83,230,255,.06); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: #66f2a3; box-shadow: 0 0 12px #66f2a3; }
-    h1 { max-width: 780px; margin: 22px 0 16px; font-size: clamp(3rem, 8vw, 6.3rem); line-height: .98; letter-spacing: -.065em; }
-    h1 span { background: linear-gradient(100deg, var(--cyan), var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .lead { max-width: 610px; color: var(--muted); font-size: 1.12rem; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .hero-note { margin-top: 45px; color: #7f89a8; font-size: .86rem; }
-    section { padding: 75px 0; }
-    .section-head { max-width: 650px; margin-bottom: 30px; }
-    .kicker { color: var(--cyan); text-transform: uppercase; letter-spacing: .15em; font-size: .76rem; font-weight: 800; }
-    h2 { margin: 8px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.04em; }
-    .sub { color: var(--muted); margin: 0; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card { padding: 25px; border-radius: 18px; background: linear-gradient(145deg, rgba(21,28,51,.92), rgba(14,19,36,.92)); border: 1px solid var(--line); }
-    .icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: rgba(83,230,255,.1); color: var(--cyan); font-size: 1.25rem; }
-    .card h3 { margin: 17px 0 7px; font-size: 1.12rem; }
-    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
-    .split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 35px; align-items: center; }
-    .panel { padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: rgba(17,22,41,.78); }
-    .rule { display: flex; gap: 13px; padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
-    .rule:last-child { border: 0; }
-    .rule b { color: var(--cyan); }
-    .staff { display: flex; flex-wrap: wrap; gap: 12px; }
-    .person { flex: 1 1 170px; padding: 18px; border-radius: 15px; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
-    .avatar { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--cyan), var(--purple)); color: #080b16; font-weight: 900; }
-    .person strong { display: block; margin-top: 12px; }
-    .person small { color: var(--muted); }
-    .join { text-align: center; padding: 55px 25px; border-radius: 24px; border: 1px solid rgba(83,230,255,.2); background: radial-gradient(ellipse at 50% 0%, rgba(83,230,255,.13), transparent 65%), var(--panel); }
-    .join p { max-width: 520px; margin: 0 auto 25px; color: var(--muted); }
-    footer { padding: 28px 0; border-top: 1px solid var(--line); color: #7f89a8; font-size: .85rem; }
-    footer .wrap { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-    @media (max-width: 760px) {
-      .links a:not(.button) { display: none; }
-      .hero { min-height: 530px; }
-      .grid { grid-template-columns: 1fr; }
-      .split { grid-template-columns: 1fr; }
-      section { padding: 55px 0; }
-    }
+    :root { color-scheme: dark; --bg:#090914; --panel:#121326; --purple:#9b5cff; --blue:#4f8cff; --muted:#b8b8ce; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:#fff; background:radial-gradient(ellipse at 50% 0%,#25204c 0%,var(--bg) 58%); min-height:100vh; }
+    header { max-width:1100px; margin:auto; padding:26px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .logo { font-size:24px; font-weight:900; letter-spacing:1px; }
+    .logo span { color:var(--purple); }
+    nav a { color:#ddd; text-decoration:none; margin-left:20px; font-size:14px; }
+    main { max-width:1000px; margin:55px auto 0; padding:22px; text-align:center; }
+    .tag { display:inline-block; padding:8px 13px; border:1px solid #59458c; border-radius:30px; color:#d8c6ff; background:#21183b; font-size:13px; }
+    h1 { font-size:clamp(42px,8vw,76px); margin:22px 0 12px; letter-spacing:-2px; }
+    h1 span { background:linear-gradient(90deg,var(--purple),var(--blue)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .intro { max-width:620px; margin:0 auto; color:var(--muted); line-height:1.7; font-size:17px; }
+    .product { max-width:470px; margin:42px auto; padding:30px; border:1px solid #37345d; border-radius:22px; background:linear-gradient(145deg,#17172e,#10101d); box-shadow:0 20px 70px #0008; }
+    .product h2 { margin:0 0 8px; font-size:27px; }
+    .product p { color:var(--muted); line-height:1.6; }
+    .price { font-size:42px; font-weight:900; margin:20px 0; }
+    .price small { font-size:15px; color:var(--muted); font-weight:400; }
+    .buy { display:inline-block; width:100%; padding:16px 20px; border-radius:12px; color:white; text-decoration:none; font-weight:800; background:linear-gradient(100deg,var(--purple),var(--blue)); transition:transform .2s,filter .2s; }
+    .buy:hover { transform:translateY(-2px); filter:brightness(1.12); }
+    .note { font-size:12px; color:#9292aa; margin-top:16px; }
+    section.info { max-width:700px; margin:50px auto; padding:0 20px; text-align:center; }
+    section.info h2 { font-size:25px; }
+    section.info p { color:var(--muted); line-height:1.7; }
+    footer { text-align:center; padding:30px 18px; color:#85859b; font-size:12px; border-top:1px solid #25243b; }
+    @media(max-width:560px) { header { flex-direction:column; } nav a { margin:0 9px; } main { margin-top:25px; } .product { padding:24px 18px; } }
   </style>
 </head>
 <body>
   <header>
-    <nav class="wrap">
-      <a class="brand" href="#">NEX<span>ORA</span></a>
-      <div class="links">
-        <a href="#o-nas">O nas</a>
-        <a href="#atrakcje">Atrakcje</a>
-        <a href="#zasady">Zasady</a>
-        <a class="button" href="https://discord.gg/TWOJ-KOD" target="_blank" rel="noopener">Dołącz na Discord</a>
-      </div>
-    </nav>
+    <div class="logo">VANTIX<span>DLC</span></div>
+    <nav><a href="#oferta">Oferta</a><a href="#kontakt">Discord</a></nav>
   </header>
 
   <main>
-    <section class="hero wrap">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> Społeczność otwarta na nowych graczy</div>
-        <h1>Wbijaj do gry.<br><span>Zostań częścią ekipy.</span></h1>
-        <p class="lead">Miejsce na dobre rozmowy, wspólne granie i ludzi, z którymi nawet zwykły wieczór staje się wydarzeniem.</p>
-        <div class="actions">
-          <a class="button" href="https://discord.gg/TWOJ-KOD" target="_blank" rel="noopener">🚀 Dołącz do serwera</a>
-          <a class="button secondary" href="#o-nas">Poznaj nas</a>
-        </div>
-        <div class="hero-note">DISCORD COMMUNITY • GAMING • GOOD VIBES</div>
-      </div>
-    </section>
+    <div class="tag">✦ MINECRAFT CLIENT</div>
+    <h1>Odkryj <span>VantixDLC</span></h1>
+    <p class="intro">Poznaj VantixDLC. Sprawdź ofertę i skontaktuj się z nami na Discordzie, aby uzyskać szczegóły dotyczące zakupu.</p>
 
-    <section id="o-nas">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">O społeczności</div>
-          <h2>Więcej niż lista kanałów.</h2>
-          <p class="sub">Tworzymy miejsce, w którym można poznać ekipę, pogadać i znaleźć ludzi do wspólnej rozgrywki.</p>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="icon">🎮</div><h3>Wspólne granie</h3><p>Umawiaj się na gry, szukaj drużyny i poznawaj nowych kompanów.</p></article>
-          <article class="card"><div class="icon">💬</div><h3>Aktywna społeczność</h3><p>Rozmowy, luźne kanały i miejsce na dzielenie się zainteresowaniami.</p></article>
-          <article class="card"><div class="icon">🏆</div><h3>Wydarzenia</h3><p>Turnieje, konkursy i serwerowe eventy. Szczegóły pojawią się na Discordzie.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="atrakcje">
-      <div class="wrap split">
-        <div>
-          <div class="kicker">Co znajdziesz na serwerze</div>
-          <h2>Twoje miejsce w ekipie.</h2>
-          <p class="sub">Dołącz, przywitaj się i wybierz kanały, które najbardziej Ci pasują. Nowe pomysły i wydarzenia będą pojawiać się na bieżąco.</p>
-        </div>
-        <div class="panel">
-          <div class="rule"><b>01</b><span>Kanały do rozmów i poznawania ludzi</span></div>
-          <div class="rule"><b>02</b><span>Pokoje głosowe do wspólnego grania</span></div>
-          <div class="rule"><b>03</b><span>Ogłoszenia, aktualności i eventy</span></div>
-          <div class="rule"><b>04</b><span>Pomoc administracji i system ticketów</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="zasady">
-      <div class="wrap split">
-        <div>
-          <div class="kicker">Zasady</div>
-          <h2>Gramy fair. Rozmawiamy z szacunkiem.</h2>
-          <p class="sub">Kilka prostych reguł pomaga utrzymać dobrą atmosferę dla wszystkich.</p>
-        </div>
-        <div class="panel">
-          <div class="rule"><b>01</b><span>Szanuj innych członków społeczności.</span></div>
-          <div class="rule"><b>02</b><span>Nie spamuj i nie reklamuj bez zgody administracji.</span></div>
-          <div class="rule"><b>03</b><span>Nie publikuj prywatnych danych innych osób.</span></div>
-          <div class="rule"><b>04</b><span>Stosuj się do regulaminu Discorda i poleceń moderacji.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="section-head"><div class="kicker">Ekipa</div><h2>Poznaj administrację.</h2><p class="sub">Podmień przykładowe role i nazwy na prawdziwą ekipę.</p></div>
-        <div class="staff">
-          <div class="person"><div class="avatar">W</div><strong>Właściciel</strong><small>Główny administrator</small></div>
-          <div class="person"><div class="avatar">A</div><strong>Administrator</strong><small>Wsparcie społeczności</small></div>
-          <div class="person"><div class="avatar">M</div><strong>Moderator</strong><small>Porządek na serwerze</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="join">
-          <div class="kicker">Czekamy na Ciebie</div>
-          <h2>Gotowy dołączyć do ekipy?</h2>
-          <p>Kliknij przycisk, wbij na Discorda i przywitaj się na czacie. Do zobaczenia!</p>
-          <a class="button" href="https://discord.gg/TWOJ-KOD" target="_blank" rel="noopener">Dołącz do NEXORA ↗</a>
-        </div>
-      </div>
-    </section>
+    <div class="product" id="oferta">
+      <h2>VantixDLC</h2>
+      <p>Licencja na klienta VantixDLC</p>
+      <div class="price">30 zł <small>/ zakup</small></div>
+      <a class="buy" href="https://discord.gg/wJ67dkfwe" target="_blank" rel="noopener noreferrer">KUP TERAZ ZA 30 ZŁ</a>
+      <div class="note">Kliknij przycisk, aby przejść na nasz serwer Discord i uzyskać informacje o zakupie.</div>
+    </div>
   </main>
 
-  <footer><div class="wrap"><span>© 2026 NEXORA. Nieoficjalna społeczność Discord.</span><span>Stworzone dla graczy 💠</span></div></footer>
+  <section class="info" id="kontakt">
+    <h2>Masz pytania?</h2>
+    <p>Dołącz do społeczności VantixDLC na Discordzie. Tam uzyskasz informacje o produkcie i dostępnych metodach płatności.</p>
+    <a class="buy" href="https://discord.gg/wJ67dkfwe" target="_blank" rel="noopener noreferrer">DOŁĄCZ NA DISCORD</a>
+  </section>
+
+  <footer>
+    VantixDLC nie jest powiązany z Mojang Studios ani Microsoft. Minecraft jest znakiem towarowym jego właścicieli.
+  </footer>
 </body>
 </html>
