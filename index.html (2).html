@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090914">
+  <title>VantixDLC | Minecraft Client</title>
+  <style>
+    :root { color-scheme: dark; --bg:#090914; --panel:#121326; --purple:#9b5cff; --blue:#4f8cff; --muted:#b8b8ce; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:#fff; background:radial-gradient(ellipse at 50% 0%,#25204c 0%,var(--bg) 58%); min-height:100vh; }
+    header { max-width:1100px; margin:auto; padding:26px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .logo { font-size:24px; font-weight:900; letter-spacing:1px; }
+    .logo span { color:var(--purple); }
+    nav a { color:#ddd; text-decoration:none; margin-left:20px; font-size:14px; }
+    main { max-width:1000px; margin:55px auto 0; padding:22px; text-align:center; }
+    .tag { display:inline-block; padding:8px 13px; border:1px solid #59458c; border-radius:30px; color:#d8c6ff; background:#21183b; font-size:13px; }
+    h1 { font-size:clamp(42px,8vw,76px); margin:22px 0 12px; letter-spacing:-2px; }
+    h1 span { background:linear-gradient(90deg,var(--purple),var(--blue)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .intro { max-width:620px; margin:0 auto; color:var(--muted); line-height:1.7; font-size:17px; }
+    .product { max-width:470px; margin:42px auto; padding:30px; border:1px solid #37345d; border-radius:22px; background:linear-gradient(145deg,#17172e,#10101d); box-shadow:0 20px 70px #0008; }
+    .product h2 { margin:0 0 8px; font-size:27px; }
+    .product p { color:var(--muted); line-height:1.6; }
+    .price { font-size:42px; font-weight:900; margin:20px 0; }
+    .price small { font-size:15px; color:var(--muted); font-weight:400; }
+    .buy { display:inline-block; width:100%; padding:16px 20px; border-radius:12px; color:white; text-decoration:none; font-weight:800; background:linear-gradient(100deg,var(--purple),var(--blue)); transition:transform .2s,filter .2s; }
+    .buy:hover { transform:translateY(-2px); filter:brightness(1.12); }
+    .note { font-size:12px; color:#9292aa; margin-top:16px; }
+    section.info { max-width:700px; margin:50px auto; padding:0 20px; text-align:center; }
+    section.info h2 { font-size:25px; }
+    section.info p { color:var(--muted); line-height:1.7; }
+    footer { text-align:center; padding:30px 18px; color:#85859b; font-size:12px; border-top:1px solid #25243b; }
+    @media(max-width:560px) { header { flex-direction:column; } nav a { margin:0 9px; } main { margin-top:25px; } .product { padding:24px 18px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">VANTIX<span>DLC</span></div>
+    <nav><a href="#oferta">Oferta</a><a href="#kontakt">Discord</a></nav>
+  </header>
+
+  <main>
+    <div class="tag">✦ MINECRAFT CLIENT</div>
+    <h1>Odkryj <span>VantixDLC</span></h1>
+    <p class="intro">Poznaj VantixDLC. Sprawdź ofertę i skontaktuj się z nami na Discordzie, aby uzyskać szczegóły dotyczące zakupu.</p>
+
+    <div class="product" id="oferta">
+      <h2>VantixDLC</h2>
+      <p>Licencja na klienta VantixDLC</p>
+      <div class="price">30 zł <small>/ zakup</small></div>
+      <a class="buy" href="https://discord.gg/wJ67dkfwe" target="_blank" rel="noopener noreferrer">KUP TERAZ ZA 30 ZŁ</a>
+      <div class="note">Kliknij przycisk, aby przejść na nasz serwer Discord i uzyskać informacje o zakupie.</div>
+    </div>
+  </main>
+
+  <section class="info" id="kontakt">
+    <h2>Masz pytania?</h2>
+    <p>Dołącz do społeczności VantixDLC na Discordzie. Tam uzyskasz informacje o produkcie i dostępnych metodach płatności.</p>
+    <a class="buy" href="https://discord.gg/wJ67dkfwe" target="_blank" rel="noopener noreferrer">DOŁĄCZ NA DISCORD</a>
+  </section>
+
+  <footer>
+    VantixDLC nie jest powiązany z Mojang Studios ani Microsoft. Minecraft jest znakiem towarowym jego właścicieli.
+  </footer>
+</body>
+</html>
